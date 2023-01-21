@@ -41,19 +41,21 @@ import random as r
 
 l = []
 
-for i in range(5):  # we will fill only 5 out of the 9 spaces in the line
-    a = r.randint(1, 10)
+while len(l) <= 4:  # we will fill only 5 out of the 9 spaces in the line
+    a = r.randint(1, 9)  # both the no. are included
     if a not in l:
         l.append(a)
-print(l)
-for i in range(11):
-    a = r.randint(0, 11)
+
+while len(l) <= 8:  # to fill the remaining spaces with zero
+    a = r.randint(0, 9)  # both the no. are included
     if len(l) > a:
-        if l[a] != 0:  # solve the index error occuring here
+        if l[a] != 0:
             l.insert(a, 0)
 
 print(l)
 
-# TODO: You have to find out a way to make the randomizing thing consistent for both the zero and inputting the no
+# TODO: You have to find out a way to make the randomizing thing consistent for both the zero and inputting the no (Solved It using while loop)
 # The no. are changing everytime and thats good but same no. of no. are needed for consistency and for the length of the list to be 10
-# TODO solve the index error
+# TODO: solve the index error (Solved)
+
+# TODO: Add more lines like in a actual sudoku game and to check that no no. is being repeated

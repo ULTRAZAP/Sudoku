@@ -59,3 +59,42 @@ print(l)
 # TODO: solve the index error (Solved)
 
 # TODO: Add more lines like in a actual sudoku game and to check that no no. is being repeated
+# Okay, I have realized the existence of 2-Dimensional Lists
+# and this is a test
+
+# l = [1, 2]
+# a = [0]
+# a.append(l)
+# l.append(4)
+# a[0] = 1
+# print(a)
+
+# We can use the above code for more efficient and faster program
+# TODO: Use the 2D List Logic to create 9 lists in side the list where each list is one line on a sudoku
+# ! Input of the no. from the user should be done after printing of the sudoku is done
+
+# * sudo = [[0,0,0,0,0,0,0,0,0],
+# * [0,0,0,0,0,0,0,0,0],
+# * [0,0,0,0,0,0,0,0,0],
+# * [0,0,0,0,0,0,0,0,0],
+# * [0,0,0,0,0,0,0,0,0],
+# * [0,0,0,0,0,0,0,0,0],
+# * [0,0,0,0,0,0,0,0,0],
+# * [0,0,0,0,0,0,0,0,0],
+# * [0,0,0,0,0,0,0,0,0]]
+
+# For better visualization I have made the above code
+# A better way would be to use for loop like this
+
+# * this is a much better way and represents the same code as above
+sudo = [[0 for i in range(9)] for j in range(9)]
+
+# for i in sudo:
+#     print(i)
+# TODO for tomorrow: randomize the no. inside them
+
+# * for printing them without brackets we can use this
+for i in range(len(sudo)):
+    for j in range(len(sudo[i])):
+        print(sudo[i][j], end=' ')
+    print()

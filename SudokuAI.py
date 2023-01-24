@@ -39,20 +39,20 @@ import random as r
 
 # we will randomize where the zero will go to
 
-l = []
+# l = []
 
-while len(l) <= 4:  # we will fill only 5 out of the 9 spaces in the line
-    a = r.randint(1, 9)  # both the no. are included
-    if a not in l:
-        l.append(a)
+# while len(l) <= 4:  # we will fill only 5 out of the 9 spaces in the line
+#     a = r.randint(1, 9)  # both the no. are included
+#     if a not in l:
+#         l.append(a)
 
-while len(l) <= 8:  # to fill the remaining spaces with zero
-    a = r.randint(0, 9)  # both the no. are included
-    if len(l) > a:
-        if l[a] != 0:
-            l.insert(a, 0)
+# while len(l) <= 8:  # to fill the remaining spaces with zero
+#     a = r.randint(0, 9)  # both the no. are included
+#     if len(l) > a:
+#         if l[a] != 0:
+#             l.insert(a, 0)
 
-print(l)
+# print(l)
 
 # TODO: You have to find out a way to make the randomizing thing consistent for both the zero and inputting the no (Solved It using while loop)
 # The no. are changing everytime and thats good but same no. of no. are needed for consistency and for the length of the list to be 10
@@ -94,7 +94,22 @@ sudo = [[0 for i in range(9)] for j in range(9)]
 # TODO for tomorrow: randomize the no. inside them
 
 # * for printing them without brackets we can use this
-for i in range(len(sudo)):
-    for j in range(len(sudo[i])):
-        print(sudo[i][j], end=' ')
-    print()
+# for i in range(len(sudo)):
+#     for j in range(len(sudo[i])):
+#         print(sudo[i][j], end=' ')
+#     print()
+
+# lets add the random algorithm
+
+print(1)
+
+i = sudo[0].count(0)
+
+while i >= 4:  # ! Fix this code here that's the todo
+    a = r.randint(1, 9)
+    b = r.randint(0, 8)  # both the no. are included
+    if a not in sudo[0]:
+        sudo[0][b] = a
+        i -= 1
+
+print(sudo)

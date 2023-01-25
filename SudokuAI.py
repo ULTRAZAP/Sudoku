@@ -59,6 +59,7 @@ import random as r
 # TODO: solve the index error (Solved)
 
 # TODO: Add more lines like in a actual sudoku game and to check that no no. is being repeated
+
 # Okay, I have realized the existence of 2-Dimensional Lists
 # and this is a test
 
@@ -70,7 +71,9 @@ import random as r
 # print(a)
 
 # We can use the above code for more efficient and faster program
+
 # TODO: Use the 2D List Logic to create 9 lists in side the list where each list is one line on a sudoku
+
 # ! Input of the no. from the user should be done after printing of the sudoku is done
 
 # * sudo = [[0,0,0,0,0,0,0,0,0],
@@ -87,11 +90,11 @@ import random as r
 # A better way would be to use for loop like this
 
 # * this is a much better way and represents the same code as above
-sudo = [[0 for i in range(9)] for j in range(9)]
+sudo = [[] for j in range(9)]
 
 # for i in sudo:
 #     print(i)
-# TODO for tomorrow: randomize the no. inside them
+# TODO for tomorrow: randomize the no. inside them(Done)
 
 # * for printing them without brackets we can use this
 # for i in range(len(sudo)):
@@ -100,16 +103,18 @@ sudo = [[0 for i in range(9)] for j in range(9)]
 #     print()
 
 # lets add the random algorithm
+for i in range(0, 2):
+    while len(sudo[i]) <= 4:  # This will add 5 no. in the
+        a = r.randint(1, 9)
+        if a not in sudo[0]:
+            sudo[0].append(a)
 
-print(1)
-
-i = sudo[0].count(0)
-
-while i >= 4:  # ! Fix this code here that's the todo
-    a = r.randint(1, 9)
-    b = r.randint(0, 8)  # both the no. are included
-    if a not in sudo[0]:
-        sudo[0][b] = a
-        i -= 1
+    while len(sudo[i]) <= 8:  # this will add 4 0's in the left over space
+        a = r.randint(1, 9)
+        if len(sudo[i]) > a:
+            if sudo[i][a] != 0:
+                sudo[i].insert(a, 0)
 
 print(sudo)
+
+# TODO Make the above code work as it is not printing anything just solve that problem

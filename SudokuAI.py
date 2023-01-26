@@ -31,6 +31,7 @@
 # lets randomize the no. in a line of a Sudoku while keeping a place in between
 # we intend to increase the spaces hence the difficulty
 
+from tabulate import tabulate as ta
 import random as r
 
 # we take random inputs from the range of 1-9 and not repeat the no. while keeping the space between them
@@ -96,18 +97,12 @@ sudo = [[] for j in range(9)]
 #     print(i)
 # TODO for tomorrow: randomize the no. inside them(Done)
 
-# * for printing them without brackets we can use this
-# for i in range(len(sudo)):
-#     for j in range(len(sudo[i])):
-#         print(sudo[i][j], end=' ')
-#     print()
-
 # lets add the random algorithm
-for i in range(0, 2):
+for i in range(9):
     while len(sudo[i]) <= 4:  # This will add 5 no. in the
         a = r.randint(1, 9)
-        if a not in sudo[0]:
-            sudo[0].append(a)
+        if a not in sudo[i]:
+            sudo[i].append(a)
 
     while len(sudo[i]) <= 8:  # this will add 4 0's in the left over space
         a = r.randint(1, 9)
@@ -115,6 +110,17 @@ for i in range(0, 2):
             if sudo[i][a] != 0:
                 sudo[i].insert(a, 0)
 
-print(sudo)
+# TODO Make the above code work as it is not printing anything just solve that problem (Solved)
 
-# TODO Make the above code work as it is not printing anything just solve that problem
+# * for printing them without brackets we can use this
+
+# for i in range(len(sudo)):
+#     for j in range(len(sudo[i])):
+#         print(sudo[i][j], end=' ')
+#     print()
+
+ # * Or what we can use it tabulate module for better looking box
+
+print(ta(sudo, tablefmt="grid"))
+
+# TODO Remove repeating no. in one line for now

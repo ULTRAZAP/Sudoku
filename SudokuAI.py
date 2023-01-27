@@ -121,6 +121,17 @@ for i in range(9):
 
  # * Or what we can use it tabulate module for better looking box
 
-print(ta(sudo, tablefmt="grid"))
+#print(ta(sudo, tablefmt="grid"))
 
 # TODO Remove repeating no. in one line for now
+
+# Let's take each box and line in a list and check if there are no no. repeating
+
+l1 = sudo[0]  # for example
+
+for i in range(len(l1)):
+    if l1[i] != 0:
+        if l1.count(l1[i]) > 1:
+            l1[i] = 0
+
+# TODO to make the above function better also make the writing of the code better

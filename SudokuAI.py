@@ -127,11 +127,31 @@ for i in range(9):
 
 # Let's take each box and line in a list and check if there are no no. repeating
 
-l1 = sudo[0]  # for example
+# TODO to make the above function better also make the writing of the code better (Done)
 
-for i in range(len(l1)):
-    if l1[i] != 0:
-        if l1.count(l1[i]) > 1:
-            l1[i] = 0
+for i in range(9):
+    l1 = sudo[i]  # for example
+    for j in range(len(l1)):
+        if l1[j] != 0:
+            if l1.count(l1[j]) > 1:
+                l1[j] = 0
+    sudo[i] = l1
 
-# TODO to make the above function better also make the writing of the code better
+
+# * Let's work on the no. not repeating in one vertical line
+
+l1 = []
+for i in range(9):
+    l1.append(sudo[i][0])
+    for j in range(len(l1)):
+        if l1[j] != 0:
+            if l1.count(l1[j]) > 1:
+                l1[j] = 0
+for i in range(9):
+    sudo[i][0] = l1[i]
+
+print(ta(sudo, tablefmt="grid"))
+
+# * Above works only for one line
+
+# TODO Make the above code work for all the lines

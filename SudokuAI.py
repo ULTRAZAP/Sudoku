@@ -137,21 +137,32 @@ for i in range(9):
                 l1[j] = 0
     sudo[i] = l1
 
-
 # * Let's work on the no. not repeating in one vertical line
 
-l1 = []
-for i in range(9):
-    l1.append(sudo[i][0])
-    for j in range(len(l1)):
-        if l1[j] != 0:
-            if l1.count(l1[j]) > 1:
-                l1[j] = 0
-for i in range(9):
-    sudo[i][0] = l1[i]
+# l1 = []
+# i = 0
+# for k in range(9):
+#     l1.append(sudo[i][k])
+#     for j in range(len(l1)):
+#         if l1[j] != 0:
+#             if l1.count(l1[j]) > 1:
+#                 l1[j] = 0
+#     sudo[i][k] = l1[i]
+#     i += 1
 
-print(ta(sudo, tablefmt="grid"))
+# print(ta(sudo, tablefmt="grid"))
 
 # * Above works only for one line
 
 # TODO Make the above code work for all the lines
+
+# Okay, It's too hard get each no. in the first index and change them so let's create another list which will contain all the elements in the vertical line
+
+# And let's shorten the for loop code
+
+sd = [range(9)]
+vl = []
+for i in sd:
+    vl.append(sudo[i][0])
+
+# TODO Work on the above code tomorrow

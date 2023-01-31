@@ -161,21 +161,24 @@ for i in range(9):
 # And let's shorten the for loop code
 
 vl = []
-for i in range(9):
-    vl.append(sudo[i][0])
+for j in range(9):
+    for i in range(9):
+        vl.append(sudo[i][j])
 
-# TODO Work on the above code tomorrow (Done)
+    # TODO Work on the above code tomorrow (Done)
 
-for i in range(len(vl)):
-    if vl.count(vl[i]) > 1:
-        vl[i] = 0
+    for i in range(len(vl)):
+        if vl.count(vl[i]) > 1:
+            vl[i] = 0
 
-for i in range(9):
-    sudo[i][0] = vl[i]
+    for i in range(9):
+        sudo[i][j] = vl[i]
 
 print(ta(sudo, tablefmt="grid"))
 
 
 # * The above code works properly and now to do this for all the vertical lines I have to implement this
 
-# TODO Implement the above algo to all vertical lines
+# TODO Implement the above algo to all vertical lines(Done)
+
+# ! The above code is not perfect so fix that

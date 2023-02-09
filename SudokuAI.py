@@ -160,19 +160,19 @@ for i in range(9):
 
 # And let's shorten the for loop code
 
-vl = []
-for j in range(9):
-    for i in range(9):
-        vl.append(sudo[i][j])
+# vl = []
+# for j in range(9):
+#     for i in range(9):
+#         vl.append(sudo[i][j])
 
-    # TODO Work on the above code tomorrow (Done)
+#     # TODO Work on the above code tomorrow (Done)
 
-    for i in range(len(vl)):
-        if vl.count(vl[i]) > 1:
-            vl[i] = 0
+#     for i in range(len(vl)):
+#         if vl.count(vl[i]) > 1:
+#             vl[i] = 0
 
-    for i in range(9):
-        sudo[i][j] = vl[i]
+#     for i in range(9):
+#         sudo[i][j] = vl[i]
 
 print(ta(sudo, tablefmt="grid"))
 
